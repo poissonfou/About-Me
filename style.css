@@ -1,0 +1,130 @@
+*{
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 150rem;
+}
+
+/*Initial screen*/
+
+.title{
+    font-size: 13rem;
+    margin-top: 8rem;
+    margin-left: 5rem;
+}
+
+.division-one{
+    background-color: blue;
+    width: 100%;
+    height: 7rem;
+    margin-top: 8rem;
+}
+
+/*First Section*/
+.first-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.first-section div{
+    width: 32rem;
+    height: 32rem;
+    background-color: rgb(255, 0, 128);
+}
+
+.my-photo{
+    width: 30rem;
+    height: 30rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.resume{
+    width: 50rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    margin-left: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+/*Second Section*/
+.division-two{
+    width: 50rem;
+    height: 3rem;
+    background-color: yellow;
+}
+
+.second-section{
+    display: flex;
+    flex-direction: row;
+}
+
+.second-section h1{
+    font-size: 4rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.second-section div:nth-child(2){
+    height: 35rem;
+    width: 35rem;
+    background-color: green;
+    margin-top: -3rem;
+}
+
+.second-section div{
+    background-color: rgb(137, 178, 255);
+}
+
+.about-art{
+    width: 49rem;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    line-height: 2.5rem;
+}
+
+.paintings{
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    width: 33rem;
+    height: 33rem;
+}
+
+/*Third Section*/
+.division-three{
+    margin-top: 2rem;
+}
+
+.flag{
+    width: 100%;
+    height: 20rem;
+}
+
+.poliglot{
+    font-size: 4rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.about-poliglot{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.songs{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+a:visited, a:link{
+    text-decoration: none;
+    color: blue;
+}
