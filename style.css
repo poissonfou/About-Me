@@ -133,7 +133,7 @@ a:visited, a:link{
 .division-four{
     display: flex;
     flex-direction: row;
-    margin-left: 0.4rem;
+    margin-left: 0.8rem;
     margin-top: 5rem;
 }
 
@@ -141,30 +141,35 @@ a:visited, a:link{
     background-color: blue;
     width:50rem;
     height: 1rem;
+    box-shadow: 0px 6px 20px blue;
 }
 
 .division-four-two{
     background-color: green;
     width:55rem;
     height: 1rem;
+    box-shadow: 0px 6px 20px green;
 }
 
 .division-four-three{
     background-color: orangered;
     width: 55rem;
     height: 1rem;
+    box-shadow: 0px 6px 20px orangered;
 }
 
 .division-four-four{
     background-color: red;
     width:55rem;
     height: 1rem;
+    box-shadow: 0px 6px 20px red;
 }
 
 .division-four-five{
     background-color: purple;
     width: 55rem;
     height: 1rem;
+    box-shadow: 0px 6px 20px purple;
 }
 
 .chess{
@@ -234,4 +239,97 @@ a:visited, a:link{
     margin-left: 48rem;
     margin-top: 6rem;
     transform: rotate(-10deg);
+}
+
+/*Fifth section*/
+.reading{
+    position: absolute;
+    font-size: 4rem;
+    margin-top: 20rem;
+    margin-left: 4rem;
+    z-index: 10;
+}
+
+.about-reading{
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 10rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.div-reading{
+    position: absolute;
+    width: 95%;
+    height: 24rem;
+    background-color: rgb(230, 80, 80);
+    margin-top: 18rem; 
+    margin-left: 2rem;
+    border-radius: 1rem;
+}
+
+/*Sixth section*/
+.finally{
+    font-size: 4rem;
+    margin-top: 48rem;
+    margin-left: 2.5rem;
+}
+
+.coding{
+    font-size: 4rem;
+    margin-top: 7rem;
+    margin-left: 2.5rem;
+}
+
+.about-coding{
+    margin-left: 2.5rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.project-image{
+    width: 40rem;
+    height: 40rem;
+    margin-left: 23rem;
+    margin-top: 2rem;
+}
+
+/*footer*/
+footer{
+    display: flex;
+    flex-direction: row;
+    height: 3rem;
+    border-top-style: solid;
+    border-top-color: blue;
+    border-top-width: 0.1rem;
+    margin-top: 2rem;
+    background-color: rgb(0, 0, 247);
+}
+
+footer p:first-child{
+    margin-right: 5rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+footer a:nth-child(3), footer a:nth-child(5){
+    margin-right: 3rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+.instagram{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.6rem;
+    margin-right: 0.3rem;
+}
+
+.linkedin{
+    width: 1.8rem;
+    height: 1.8rem;
+    margin-top: 0.5rem;
+    margin-right: 0.2rem;
 }
