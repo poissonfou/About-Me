@@ -1,0 +1,34 @@
+/*Third Section*/
+.division-three{
+    margin-top: 2rem;
+}
+
+.flag{
+    width: 100%;
+    height: 20rem;
+}
+
+.poliglot{
+    font-size: 4rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.about-poliglot{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.songs{
+    margin-left: 2rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+a:visited, a:link{
+    text-decoration: none;
+    color: blue;
+}

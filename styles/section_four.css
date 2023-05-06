@@ -1,0 +1,111 @@
+/*Fourth Section*/
+.division-four{
+    display: flex;
+    flex-direction: row;
+    margin-left: 0.8rem;
+    margin-top: 5rem;
+}
+
+.division-four-one{
+    background-color: blue;
+    width:50rem;
+    height: 1rem;
+    box-shadow: 0px 6px 20px blue;
+}
+
+.division-four-two{
+    background-color: green;
+    width:55rem;
+    height: 1rem;
+    box-shadow: 0px 6px 20px green;
+}
+
+.division-four-three{
+    background-color: orangered;
+    width: 55rem;
+    height: 1rem;
+    box-shadow: 0px 6px 20px orangered;
+}
+
+.division-four-four{
+    background-color: red;
+    width:55rem;
+    height: 1rem;
+    box-shadow: 0px 6px 20px red;
+}
+
+.division-four-five{
+    background-color: purple;
+    width: 55rem;
+    height: 1rem;
+    box-shadow: 0px 6px 20px purple;
+}
+
+.chess{
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.about-chess{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.black-queen{
+    position: absolute;
+    z-index: -10;
+    margin-top: -18rem;
+    width: 8rem;
+    margin-left: 57rem;
+    transform: rotate(-20deg);
+    filter: blur(2px);
+}
+
+.black-knight{
+    position: absolute;
+    z-index: -12;
+    width: 3rem;
+    margin-left: 50rem;
+    transform: rotate(-20deg);
+    filter: blur(1px);
+}
+
+.white-king{
+    position: absolute;
+    z-index: -15;
+    width: 5rem;
+    margin-left: 13rem;
+    margin-top: 2rem;
+    filter: blur(2px);
+    transform: rotate(-140deg);
+}
+
+.white-pawn{
+    position: absolute;
+    z-index: -16;
+    width: 8rem;
+    margin-left: 30rem;
+    margin-top: -2rem;
+    transform: rotate(50deg);
+}
+
+.white-bishop{
+    position: absolute;
+    z-index: -17;
+    width: 8rem;
+    margin-left: 70rem;
+    filter: blur(0.5px);
+    transform: rotate(40deg);
+}
+
+.black-rook{
+    position: absolute;
+    z-index: -18;
+    width: 5rem;
+    margin-left: 48rem;
+    margin-top: 6rem;
+    transform: rotate(-10deg);
+}

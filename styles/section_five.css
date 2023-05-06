@@ -1,0 +1,26 @@
+/*Fifth section*/
+.reading{
+    position: absolute;
+    font-size: 4rem;
+    margin-top: 20rem;
+    margin-left: 4rem;
+    z-index: 10;
+}
+
+.about-reading{
+    position: absolute;
+    margin-left: 2rem;
+    margin-top: 10rem;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+}
+
+.div-reading{
+    position: absolute;
+    width: 95%;
+    height: 24rem;
+    background-color: rgb(230, 80, 80);
+    margin-top: 18rem; 
+    margin-left: 2rem;
+    border-radius: 1rem;
+}
