@@ -5,6 +5,7 @@
     margin-top: 20rem;
     margin-left: 4rem;
     z-index: 10;
+    transition: 2s
 }
 
 .about-reading{
@@ -13,6 +14,7 @@
     margin-top: 10rem;
     font-size: 1.8rem;
     line-height: 2.5rem;
+    transition: 2s;
 }
 
 .div-reading{
@@ -23,4 +25,9 @@
     margin-top: 18rem; 
     margin-left: 2rem;
     border-radius: 1rem;
+    transition: 2s;
+}
+
+.div-reading-inactive{
+    height: 0.5rem;
 }

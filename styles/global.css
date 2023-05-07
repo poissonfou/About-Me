@@ -10,6 +10,12 @@
     font-size: 13rem;
     margin-top: 8rem;
     margin-left: 5rem;
+    transition: 2s;
+}
+
+.inactive{
+    transform: translateY(5rem);
+    opacity: 0;
 }
 
 .division-one{

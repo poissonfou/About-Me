@@ -14,6 +14,7 @@
     font-size: 4rem;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
+    transition: 2s;
 }
 
 .second-section div:nth-child(2){
@@ -33,6 +34,12 @@
     margin-top: 2rem;
     margin-left: 0.5rem;
     line-height: 2.5rem;
+    transition: 2s;
+}
+
+.art-inactive{
+    transform: translateY(5rem);
+    opacity: 0;
 }
 
 .paintings{

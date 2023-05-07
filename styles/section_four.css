@@ -45,6 +45,7 @@
     font-size: 3rem;
     margin-top: 2rem;
     margin-left: 2rem;
+    transition: 2s;
 }
 
 .about-chess{
@@ -52,6 +53,7 @@
     margin-top: 2rem;
     font-size: 1.8rem;
     line-height: 2.5rem;
+    transition: 2s;
 }
 
 .black-queen{
@@ -62,6 +64,10 @@
     margin-left: 57rem;
     transform: rotate(-20deg);
     filter: blur(2px);
+    animation-name: bounce-queen;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .black-knight{
@@ -71,6 +77,10 @@
     margin-left: 50rem;
     transform: rotate(-20deg);
     filter: blur(1px);
+    animation-name: bounce-bishop-knight;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .white-king{
@@ -81,6 +91,10 @@
     margin-top: 2rem;
     filter: blur(2px);
     transform: rotate(-140deg);
+    animation-name: bounce-king;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .white-pawn{
@@ -90,6 +104,10 @@
     margin-left: 30rem;
     margin-top: -2rem;
     transform: rotate(50deg);
+    animation-name: bounce-pawn;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .white-bishop{
@@ -99,6 +117,10 @@
     margin-left: 70rem;
     filter: blur(0.5px);
     transform: rotate(40deg);
+    animation-name: bounce-bishop-knight;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .black-rook{
@@ -108,4 +130,58 @@
     margin-left: 48rem;
     margin-top: 6rem;
     transform: rotate(-10deg);
+    animation-name: bounce-rook;
+    animation-duration: 1.4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bounce-rook{
+    from{
+        margin-top: 5rem;
+    }
+
+    to{
+        margin-top: 5.5rem;
+    }
+}
+
+@keyframes bounce-bishop-knight{
+    from{
+        margin-top: -0.5rem;
+    }
+
+    to{
+        margin-top: 0.5rem;
+    }
+}
+
+@keyframes bounce-pawn{
+    from{
+        margin-top: -2.5rem;
+    }
+
+    to{
+        margin-top: -1.5rem;
+    }
+}
+
+@keyframes bounce-king{
+    from{
+        margin-top: 1.5rem;
+    }
+
+    to{
+        margin-top: 2.5rem;
+    }
+}
+
+@keyframes bounce-queen{
+    from{
+        margin-top: -17.5rem;
+    }
+
+    to{
+        margin-top: -18.3rem;
+    }
 }

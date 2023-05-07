@@ -12,6 +12,7 @@
     font-size: 4rem;
     margin-left: 2rem;
     margin-top: 2rem;
+    transition: 2s;
 }
 
 .about-poliglot{
@@ -19,6 +20,7 @@
     margin-top: 1rem;
     font-size: 1.8rem;
     line-height: 2.5rem;
+    transition: 2s;
 }
 
 .songs{
@@ -26,9 +28,12 @@
     margin-top: 1rem;
     font-size: 1.8rem;
     line-height: 2.5rem;
+    transition: 2s;
 }
 
 a:visited, a:link{
     text-decoration: none;
     color: blue;
 }
+
+
