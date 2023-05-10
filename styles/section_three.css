@@ -1,11 +1,33 @@
 /*Third Section*/
-.division-three{
-    margin-top: 2rem;
+
+#slider {
+    position: relative;
+    width: 500px;
+    height: 265px;
+    overflow: hidden;
 }
 
-.flag{
-    width: 100%;
-    height: 20rem;
+#slider ul {
+    position: relative;
+    list-style: none;
+    height: 100%;
+    width: 10000%;
+    padding: 0;
+    margin: 0;
+    transition: all 750ms ease;
+    left: 0;
+}
+
+#slider ul li {
+    position: relative;
+    height: 100%;
+
+    float: left;
+}
+
+#slider ul li img {
+    width: 500px;
+    height: 265px;
 }
 
 .poliglot{

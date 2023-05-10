@@ -8,8 +8,6 @@ function loadText(){
     var y = window.pageYOffset;
     if(y >= 350){
         text.classList.remove('inactive');
-    } else {
-        console.log('erro')
     }
 }
 
@@ -21,8 +19,6 @@ function loadTextArt(){
     if(y >= 800){
         text.classList.remove('inactive');
         h1.classList.remove('inactive')
-    } else {
-        console.log('erro')
     }
 }
 
@@ -35,8 +31,6 @@ function loadTextPoli(){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
         songs.classList.remove('inactive');
-    } else {
-        console.log('erro')
     }
 }
 
@@ -47,8 +41,6 @@ function loadTextChess(){
     if(y >= 2170){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
-    } else {
-        console.log('erro')
     }
 }
 
@@ -63,8 +55,6 @@ function loadTextReading(){
             h1.classList.remove('inactive');
         }, 1000)
         div.classList.remove('div-reading-inactive')
-    } else {
-        console.log('erro')
     }
 }
 
@@ -77,8 +67,6 @@ function loadTextCode(){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
         img.classList.remove('inactive');
-    } else {
-        console.log('erro')
     }
 }
 
@@ -88,13 +76,11 @@ function loadTextFinally(){
     var y = window.pageYOffset;
     if(y >= 3000){
         h1.classList.remove('inactive');
-    } else {
-        console.log('erro')
     }
 }
 
 
-
+window.addEventListener('load', loadTitle)
 window.addEventListener('scroll', loadText);
 window.addEventListener('scroll', loadTextArt);
 window.addEventListener('scroll', loadTextPoli);
@@ -103,7 +89,49 @@ window.addEventListener('scroll', loadTextReading);
 window.addEventListener('scroll', loadTextCode);
 window.addEventListener('scroll', loadTextFinally);
 
+var responsiveSlider = function () {
 
+    var slider = document.getElementById("slider");
+    var sliderWidth = slider.offsetWidth;
+    var slideList = document.getElementById("slideWrap");
+    var count = 1;
+    var items = slideList.querySelectorAll("li").length;
 
+    window.addEventListener('resize', function () {
+        sliderWidth = slider.offsetWidth;
+    });
 
+    var prevSlide = function () {
+        if (count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        else if (count = 1) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+    };
+
+    var nextSlide = function () {
+        if (count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        else if (count = items) {
+            slideList.style.left = "0px";
+            count = 1;
+        }
+    };
+
+    setInterval(function () {
+        nextSlide()
+    }, 5000);
+
+};
+
+window.onload = function () {
+    responsiveSlider();
+}
 
