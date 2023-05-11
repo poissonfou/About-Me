@@ -5,7 +5,6 @@ function loadText(){
     title.classList.remove('inactive');
 
     let y = window.pageYOffset;
-    
     if(y >= 350){
     const text = document.querySelector('.resume');
     text.classList.remove('inactive');
@@ -66,45 +65,23 @@ window.addEventListener('load', loadText)
 window.addEventListener('scroll', loadText);
 
 
-let responsiveSlider = function () {
+let Slider = function (n) {
+    console.log('bruh')
+    let slider, slideList, prev, next
 
-    let slider = document.getElementById("division-three");
+    if(n == 1){
+        slider = document.getElementById("division-three");
+        slideList = document.getElementById("flags");
+    } else{
+        slider = document.getElementById("paintings");
+        slideList = document.getElementById("paintings-list");
+        prev = document.getElementById("prev");
+        next = document.getElementById("next");
+    }
+
     let sliderWidth = slider.offsetWidth;
-    let slideList = document.getElementById("flags");
     let count = 1;
     let items = slideList.querySelectorAll("li").length;
-
-    window.addEventListener('resize', function () {
-        sliderWidth = slider.offsetWidth;
-    });
-
-    let nextSlide = function () {
-        if (count < items) {
-            slideList.style.left = "-" + count * 0.9999 * sliderWidth + "px";
-            count++;
-        }
-        else if (count = items) {
-            slideList.style.left = "0px";
-            count = 1;
-        }
-    };
-
-    setInterval(function () {
-        nextSlide()
-    }, 5000);
-
-};
-
-
-let responsiveSlider2 = function () {
-
-    let slider = document.getElementById("paintings");
-    let sliderWidth = slider.offsetWidth;
-    let slideList = document.getElementById("paintings-list");
-    let count = 1;
-    let items = slideList.querySelectorAll("li").length;
-    let prev = document.getElementById("prev");
-    let next = document.getElementById("next");
 
     window.addEventListener('resize', function () {
         sliderWidth = slider.offsetWidth;
@@ -125,7 +102,7 @@ let responsiveSlider2 = function () {
 
     let nextSlide = function () {
         if (count < items) {
-            slideList.style.left = "-" + count * sliderWidth + "px";
+            slideList.style.left = "-" + count * 0.9999 * sliderWidth + "px";
             count++;
         }
         else if (count = items) {
@@ -133,6 +110,18 @@ let responsiveSlider2 = function () {
             count = 1;
         }
     };
+
+    if(n == 1){
+        
+    setInterval(function () {
+        nextSlide()
+    }, 5000);
+
+    } else {
+
+    setInterval(function () {
+        nextSlide()
+    }, 7000);
 
     next.addEventListener("click", function (e) {
         e.preventDefault();
@@ -143,15 +132,13 @@ let responsiveSlider2 = function () {
         e.preventDefault();
         prevSlide();
     });
-
-    setInterval(function () {
-        nextSlide()
-    }, 7000);
+ }
 
 };
 
+
 window.onload = function () {
-    responsiveSlider();
-    responsiveSlider2();
+    Slider(1);
+    Slider(2);
 }
 
