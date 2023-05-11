@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body{
+    overflow-x: hidden;
+}
+
 /*Initial screen*/
 
 .title{
@@ -11,6 +15,29 @@
     margin-top: 8rem;
     margin-left: 5rem;
     transition: 2s;
+}
+
+.pink-square{
+    position: absolute;
+    z-index: -10;
+    background-color: rgb(255, 0, 128);
+    width: 20rem;
+    height: 20rem;
+    right: 0;
+    margin-top: -9rem;
+    transform: rotate(-50deg);
+    margin-right: -9rem;
+}
+
+.yellow-square{
+    position: absolute;
+    z-index: -10;
+    background-color: yellow;
+    width: 20rem;
+    height: 20rem;
+    margin-top: -5rem;
+    transform: rotate(-50deg);
+    margin-right: -9rem;
 }
 
 .inactive{

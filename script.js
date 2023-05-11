@@ -5,7 +5,7 @@ function loadTitle(){
 
 function loadText(){
     const text = document.querySelector('.resume');
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 350){
         text.classList.remove('inactive');
     }
@@ -15,7 +15,7 @@ function loadText(){
 function loadTextArt(){
     const text = document.querySelector('.about-art');
     const h1 = document.querySelector('.art');
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 800){
         text.classList.remove('inactive');
         h1.classList.remove('inactive')
@@ -26,7 +26,7 @@ function loadTextPoli(){
     const text = document.querySelector('.about-poliglot');
     const songs = document.querySelector('.songs')
     const h1 = document.querySelector('.poliglot');
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 1200){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
@@ -37,7 +37,7 @@ function loadTextPoli(){
 function loadTextChess(){
     const text = document.querySelector('.about-chess');
     const h1 = document.querySelector('.chess');
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 2170){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
@@ -48,7 +48,7 @@ function loadTextReading(){
     const text = document.querySelector('.about-reading');
     const h1 = document.querySelector('.reading');
     const div = document.querySelector('.div-reading')
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 2500){
         setTimeout(() =>{
             text.classList.remove('inactive');
@@ -62,7 +62,7 @@ function loadTextCode(){
     const text = document.querySelector('.about-coding');
     const h1 = document.querySelector('.coding');
     const img = document.querySelector('.project-image')
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 3300){
         text.classList.remove('inactive');
         h1.classList.remove('inactive');
@@ -73,7 +73,7 @@ function loadTextCode(){
 
 function loadTextFinally(){
     const h1 = document.querySelector('.finally');
-    var y = window.pageYOffset;
+    let y = window.pageYOffset;
     if(y >= 3000){
         h1.classList.remove('inactive');
     }
