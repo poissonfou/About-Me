@@ -1,13 +1,14 @@
 /*Third Section*/
 
-#slider {
+#division-three {
     position: relative;
-    width: 500px;
-    height: 265px;
+    width: 84.375rem;
+    height: 20rem;
+    margin-top: 2rem;
     overflow: hidden;
 }
 
-#slider ul {
+#division-three ul {
     position: relative;
     list-style: none;
     height: 100%;
@@ -18,16 +19,16 @@
     left: 0;
 }
 
-#slider ul li {
+#division-three ul li {
     position: relative;
     height: 100%;
 
     float: left;
 }
 
-#slider ul li img {
-    width: 500px;
-    height: 265px;
+#division-three ul li img {
+    width: 84.375rem;
+    height: 20rem;
 }
 
 .poliglot{

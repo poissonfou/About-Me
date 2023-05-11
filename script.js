@@ -89,34 +89,21 @@ window.addEventListener('scroll', loadTextReading);
 window.addEventListener('scroll', loadTextCode);
 window.addEventListener('scroll', loadTextFinally);
 
-var responsiveSlider = function () {
+let responsiveSlider = function () {
 
-    var slider = document.getElementById("slider");
-    var sliderWidth = slider.offsetWidth;
-    var slideList = document.getElementById("slideWrap");
-    var count = 1;
-    var items = slideList.querySelectorAll("li").length;
+    let slider = document.getElementById("division-three");
+    let sliderWidth = slider.offsetWidth;
+    let slideList = document.getElementById("flags");
+    let count = 1;
+    let items = slideList.querySelectorAll("li").length;
 
     window.addEventListener('resize', function () {
         sliderWidth = slider.offsetWidth;
     });
 
-    var prevSlide = function () {
-        if (count > 1) {
-            count = count - 2;
-            slideList.style.left = "-" + count * sliderWidth + "px";
-            count++;
-        }
-        else if (count = 1) {
-            count = items - 1;
-            slideList.style.left = "-" + count * sliderWidth + "px";
-            count++;
-        }
-    };
-
-    var nextSlide = function () {
+    let nextSlide = function () {
         if (count < items) {
-            slideList.style.left = "-" + count * sliderWidth + "px";
+            slideList.style.left = "-" + count * 0.9999 * sliderWidth + "px";
             count++;
         }
         else if (count = items) {
@@ -131,7 +118,63 @@ var responsiveSlider = function () {
 
 };
 
+
+let responsiveSlider2 = function () {
+
+    let slider = document.getElementById("paintings");
+    let sliderWidth = slider.offsetWidth;
+    let slideList = document.getElementById("paintings-list");
+    let count = 1;
+    let items = slideList.querySelectorAll("li").length;
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
+
+    window.addEventListener('resize', function () {
+        sliderWidth = slider.offsetWidth;
+    });
+
+    let prevSlide = function () {
+        if (count > 1) {
+            count = count - 2;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        else if (count = 1) {
+            count = items - 1;
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+    };
+
+    let nextSlide = function () {
+        if (count < items) {
+            slideList.style.left = "-" + count * sliderWidth + "px";
+            count++;
+        }
+        else if (count = items) {
+            slideList.style.left = "0px";
+            count = 1;
+        }
+    };
+
+    next.addEventListener("click", function (e) {
+        e.preventDefault();
+        nextSlide();
+    });
+
+    prev.addEventListener("click", function (e) {
+        e.preventDefault();
+        prevSlide();
+    });
+
+    setInterval(function () {
+        nextSlide()
+    }, 7000);
+
+};
+
 window.onload = function () {
     responsiveSlider();
+    responsiveSlider2();
 }
 
