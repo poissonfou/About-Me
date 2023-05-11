@@ -1,93 +1,70 @@
-function loadTitle(){
-    let title = document.querySelector('.title');
-    title.classList.remove('inactive');
-}
+'use strict'
 
 function loadText(){
-    const text = document.querySelector('.resume');
+    let title = document.querySelector('.title');
+    title.classList.remove('inactive');
+
     let y = window.pageYOffset;
+    
     if(y >= 350){
-        text.classList.remove('inactive');
+    const text = document.querySelector('.resume');
+    text.classList.remove('inactive');
     }
-}
 
-
-function loadTextArt(){
+    if(y >= 800){
     const text = document.querySelector('.about-art');
     const h1 = document.querySelector('.art');
-    let y = window.pageYOffset;
-    if(y >= 800){
-        text.classList.remove('inactive');
-        h1.classList.remove('inactive')
+    text.classList.remove('inactive');
+    h1.classList.remove('inactive')
     }
-}
 
-function loadTextPoli(){
+    if(y >= 1200){
     const text = document.querySelector('.about-poliglot');
     const songs = document.querySelector('.songs')
     const h1 = document.querySelector('.poliglot');
-    let y = window.pageYOffset;
-    if(y >= 1200){
-        text.classList.remove('inactive');
-        h1.classList.remove('inactive');
-        songs.classList.remove('inactive');
+    
+    text.classList.remove('inactive');
+    h1.classList.remove('inactive');
+    songs.classList.remove('inactive');
     }
-}
 
-function loadTextChess(){
+    if(y >= 2170){
     const text = document.querySelector('.about-chess');
     const h1 = document.querySelector('.chess');
-    let y = window.pageYOffset;
-    if(y >= 2170){
-        text.classList.remove('inactive');
-        h1.classList.remove('inactive');
+    text.classList.remove('inactive');
+    h1.classList.remove('inactive');
     }
-}
 
-function loadTextReading(){
+    if(y >= 2500){
     const text = document.querySelector('.about-reading');
     const h1 = document.querySelector('.reading');
-    const div = document.querySelector('.div-reading')
-    let y = window.pageYOffset;
-    if(y >= 2500){
-        setTimeout(() =>{
-            text.classList.remove('inactive');
-            h1.classList.remove('inactive');
-        }, 1000)
-        div.classList.remove('div-reading-inactive')
-    }
-}
+    const div = document.querySelector('.div-reading');
+    setTimeout(() =>{
+        text.classList.remove('inactive');
+        h1.classList.remove('inactive');
+    }, 1000)
 
-function loadTextCode(){
+    div.classList.remove('div-reading-inactive');
+    }
+
+    if(y >= 3000){
+    const h1 = document.querySelector('.finally');
+    h1.classList.remove('inactive');
+    }
+
+    if(y >= 3300){
     const text = document.querySelector('.about-coding');
     const h1 = document.querySelector('.coding');
     const img = document.querySelector('.project-image')
-    let y = window.pageYOffset;
-    if(y >= 3300){
-        text.classList.remove('inactive');
-        h1.classList.remove('inactive');
-        img.classList.remove('inactive');
+    text.classList.remove('inactive');
+    h1.classList.remove('inactive');
+    img.classList.remove('inactive');
     }
 }
 
-
-function loadTextFinally(){
-    const h1 = document.querySelector('.finally');
-    let y = window.pageYOffset;
-    if(y >= 3000){
-        h1.classList.remove('inactive');
-    }
-}
-
-
-window.addEventListener('load', loadTitle)
+window.addEventListener('load', loadText)
 window.addEventListener('scroll', loadText);
-window.addEventListener('scroll', loadTextArt);
-window.addEventListener('scroll', loadTextPoli);
-window.addEventListener('scroll', loadTextChess);
-window.addEventListener('scroll', loadTextReading);
-window.addEventListener('scroll', loadTextCode);
-window.addEventListener('scroll', loadTextFinally);
+
 
 let responsiveSlider = function () {
 
