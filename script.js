@@ -66,7 +66,6 @@ window.addEventListener('scroll', loadText);
 
 
 let Slider = function (n) {
-    console.log('bruh')
     let slider, slideList, prev, next
 
     if(n == 1){
@@ -112,7 +111,7 @@ let Slider = function (n) {
     };
 
     if(n == 1){
-        
+
     setInterval(function () {
         nextSlide()
     }, 5000);
