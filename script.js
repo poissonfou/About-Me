@@ -1,5 +1,12 @@
 'use strict'
 
+let paintings = ["_",
+                "Stary Night, 1889",
+                 "Femme à l'ombre, 1886",
+                 "Sistine Chapel, 1508-1512",
+                 "Guernica, 1937",
+                 "The Scream, 1893"];
+
 function loadText(){
     let title = document.querySelector('.title');
     title.classList.remove('inactive');
@@ -66,7 +73,9 @@ window.addEventListener('scroll', loadText);
 
 
 let Slider = function (n) {
-    let slider, slideList, prev, next
+    let slider, slideList, prev, next, desc
+
+    let count = 1;
 
     if(n == 1){
         slider = document.getElementById("division-three");
@@ -76,10 +85,12 @@ let Slider = function (n) {
         slideList = document.getElementById("paintings-list");
         prev = document.getElementById("prev");
         next = document.getElementById("next");
+        desc = document.querySelector(".painting-name");
+        desc.innerHTML = paintings[count];   
     }
 
     let sliderWidth = slider.offsetWidth;
-    let count = 1;
+
     let items = slideList.querySelectorAll("li").length;
 
     window.addEventListener('resize', function () {
@@ -97,6 +108,14 @@ let Slider = function (n) {
             slideList.style.left = "-" + count * sliderWidth + "px";
             count++;
         }
+        if(n != 1){
+            desc.innerHTML = paintings[count];
+            if(paintings[count].length > 17){
+                desc.style.marginLeft = "11rem";
+            }else{
+                desc.style.marginLeft = "13rem";
+            }
+        }
     };
 
     let nextSlide = function () {
@@ -107,6 +126,14 @@ let Slider = function (n) {
         else if (count = items) {
             slideList.style.left = "0px";
             count = 1;
+        }
+        if(n != 1){
+            desc.innerHTML = paintings[count];
+            if(paintings[count].length > 17){
+                desc.style.marginLeft = "11rem";
+            }else{
+                desc.style.marginLeft = "13rem";
+            }             
         }
     };
 

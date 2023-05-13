@@ -18,7 +18,7 @@
 }
 
 .second-section div:nth-child(2){
-    height: 35rem;
+    height: 37rem;
     width: 35rem;
     background-color: green;
     margin-top: -3rem;
@@ -102,4 +102,10 @@
 
 #paintings #next {
     right: 0.625rem;
+}
+
+.painting-name{
+    margin-left:13rem;
+    font-size: 1.3rem;
+    margin-top: 0.4rem;
 }
