@@ -17,6 +17,7 @@ export const UIController = (function (APIController) {
                 ? albums[i].name.slice(1, 16)
                 : albums[i].name
             }</p>
+            <p>${albums[i].artists[0].name}</p>
         </div>
         `;
 

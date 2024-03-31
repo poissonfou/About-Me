@@ -204,6 +204,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding-bottom: 2em;
 }
 
@@ -215,7 +216,10 @@ body {
 
 .info-container {
   display: flex;
-  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1em;
 }
 
 .likes {
@@ -272,7 +276,7 @@ body {
     rgba(60, 18, 87, 1) 0%,
     rgba(7, 14, 78, 1) 100%
   );
-  padding: 1em;
+  padding: 0.5em;
   border-radius: 4px;
   margin-bottom: 1em;
 }
@@ -352,8 +356,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: row;
-  height: 20rem;
-  width: 100%;
   overflow: hidden;
   justify-content: center;
   align-items: center;
@@ -415,8 +417,7 @@ body {
 }
 
 .album-item img {
-  width: 16em;
-  height: 16em;
+  width: 80%;
   object-fit: cover;
   border-radius: 2px;
 }
@@ -429,6 +430,10 @@ body {
   margin: 0;
   font-family: "Fjalla One", sans-serif;
   padding: 0;
+}
+
+.album-item p:nth-child(3) {
+  font-size: 0.8em;
 }
 
 /*section four*/
