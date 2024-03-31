@@ -5,142 +5,178 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/section_one.css">
-    <link rel="stylesheet" href="./styles/section_two.css">
-    <link rel="stylesheet" href="./styles/section_three.css">
-    <link rel="stylesheet" href="./styles/section_four.css">
-    <link rel="stylesheet" href="./styles/section_five.css">
-    <link rel="stylesheet" href="./styles/section_six.css">
-    <script src="./script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Rakkas&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <script type="module" src="./app.js"></script>
     <title>About Me</title>
 </head>
 
 <body>
     <main>
-        <div class="yellow-square"></div>
-
-        <h1 class="title inactive">About Me :)</h1>
-
-        <div class="pink-square"></div>
-
-        <div class="division-one">
-        </div>
-        <div class="first-section">
-            <div><img src="./assets/profile.jpg" alt="Emerson's photo" class="my-photo"></div>
-            <p class="resume inactive">My name is Emerson. I'm 19 years old and I'm natural from Tietê, a small
-                city on the state of São Paulo, Brazil. I've lived my whole live on the contryside but currently I am
-                living in the capital, where I am studying at the University of São Paulo. I'm majoring in Social
-                Sciences. It's a very insteresting field that comprehends Sociology, Anthropology and Political Science.
-                I'm really keen on technology but what I really really like to study and talk about is the subjects that
-                deal with social problems, politics, etc. so when I learned about this major, it really seemed like the
-                perfect fit for me.
-            </p>
-        </div>
-        <div class="division-two">
-        </div>
-        <div class="second-section">
-            <div>
-                <h1 class="art inactive">I'm really into art.</h1>
-                <p class="about-art inactive">When I was younger I really didn't care about art, but as I grew I
-                    started to really apreciate art as a whole, specially paintings and architecture. Regarding
-                    paintings, my favorite movement is the European Expresionism, whereas in achitecture, the gothic
-                    style is what I find the most pleasing. Here are some of my favorite paintings:
-                </p>
-            </div>
-            <div>
-                <div id="paintings">
-                    <ul id="paintings-list">
-                        <li><img src="./assets/paintings/starynight.jpg" alt="stary night"></li>
-                        <li><img src="./assets/paintings/femmealombrelle.jpg" alt="femme a l'ombre"></li>
-                        <li><img src="./assets/paintings/sistinechapel.jpg" alt="sistine chapel"></li>
-                        <li><img src="./assets/paintings/guernica.jpg" alt="guernica"></li>
-                        <li><img src="./assets/paintings/thescream.jpg" alt="the scream"></li>
-                    </ul>
-                    <a id="prev" href="#">&#8810;</a>
-                    <a id="next" href="#">&#8811;</a>
+        <section class="section-one">
+            <div class="img-box">
+                <img src="./assets/pic.jpg" alt="author picture">
+                <div class="contact">
+                    <div>
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p>São Paulo, Brazil</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-envelope-fill"></i>
+                        <p>emersonlimago123@gmail.com</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-telephone-fill"></i>
+                        <p>(15)99146-5696</p>
+                    </div>
                 </div>
-                <p class="painting-name">#</p>
             </div>
-        </div>
+            <div class="text-box">
+                <div>
+                    <h1>
+                        Hi there <span class="wave">👋</span>
+                    </h1>
+                    <p>
+                        My name is Emerson. I'm a 20 years old self-taught web dev and social sciences student.
+                    </p>
+                </div>
+                <div class="external-links">
+                    <a
+                        href="https://www.linkedin.com/in/emerson-lima-%F0%9F%8F%B3%EF%B8%8F%E2%80%8D%F0%9F%8C%88-000986237/">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/poissonfou">
+                        <i class="bi bi-github"></i>
+                    </a>
+                </div>
+                <div class="skills">
+                    <div>Detail Oriented</div>
+                    <div>Dedicated</div>
+                    <div>Frontend</div>
+                    <div>Backend</div>
+                    <div>Cooperative</div>
+                    <div>Sympathetic</div>
+                    <div>Great Coffee☕</div>
+                </div>
+            </div>
+        </section>
 
-        <div id="division-three">
-            <ul id="flags">
-                <li><img src="./assets/flags/spain.jpg" alt="spain's flag"></li>
-                <li><img src="./assets/flags/brazil.png" alt="brazil's flag"></li>
-                <li><img src="./assets/flags/france.jpg" alt="france's flag"></li>
-                <li><img src="./assets/flags/italy.jpg" alt="italy's flag"></li>
-                <li><img src="./assets/flags/america.jpg" alt="america's flag"></li>
-            </ul>
-        </div>
+        <section class="section-two">
+            <p>I'm aiming to be a full-stack developer, but currently I'm more experienced in frontend development.</p>
+            <div class="exp">
+                <p>I have a good understanding of:</p>
+                <div class="techs">
+                    <img src="./assets/react.png" alt="">
+                    <img src="./assets/js.png" alt="">
+                    <img src="./assets/vue.jpg" alt="">
+                    <img src="./assets/html.png" alt="">
+                    <img src="./assets/css.png" alt="">
+                </div>
+                <p>And I have some practice with:</p>
+                <div class="techs">
+                    <img src="./assets/node.png" alt="">
+                    <img src="./assets/mysql.png" alt="">
+                    <img src="./assets/mongo.png" alt="">
+                    <img src="./assets/php.png" alt="">
+                    <img src="./assets/python.jpg" alt="">
+                    <img src="./assets/graphql.png" alt="">
+                </div>
+            </div>
+        </section>
 
-        <h1 class="poliglot inactive">I'm a poliglot!</h1>
-        <p class="about-poliglot inactive">At first, I thought I would only learn English, but I fell in love
-            with the language learning process and the new experiencies that knowing a foreign language can provide to
-            you. So, while I learned English in a language school, I started to learn French by myself in High School.
-            Then I went on to Spanish and currently I am studying German and Italian. Learning a new language can be
-            quite stressful but it really pays off in the end.
-        </p>
-        <p class="songs inactive">Here are some songs I like in <a
-                href="https://open.spotify.com/playlist/60vKKzfyedTxYAAs1n62TS">German</a>, <a
-                href="https://open.spotify.com/playlist/2iroXtZYe4a2xy4VqJzlgp">French</a>, <a
-                href="https://open.spotify.com/playlist/1FPzQdzWNYHcPZnHD41b7c">Spanish</a>
-            and <a href="https://open.spotify.com/playlist/4QhYv5EEZ4NM7iyFA4Kplw">Italian.</a></p>
+        <section class="section-three">
+            <p class="type">Some info about me :)</p>
+            <div class="info-container">
+                <div class="likes">
+                    <p>I'm really into:</p>
+                    <div class="grid-likes">
+                        <div>
+                            <span class="material-symbols-outlined">
+                                chess
+                            </span>
+                            Chess
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                import_contacts
+                            </span>
+                            Reading
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                brush
+                            </span>
+                            Art
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                music_note
+                            </span>
+                            Music
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="languages">
+                        <p>I speak:</p>
+                        <div>
+                            <img src="./assets/brazil.png" alt="brazilian flag" loading="lazy">
+                            <img src="./assets/usa.png" alt="american flag" loading="lazy">
+                            <img src="./assets/france.png" alt="french flag" loading="lazy">
+                            <img src="./assets/spain.png" alt="spanish flag" loading="lazy">
+                            <img src="./assets/italy.png" alt="italian flag" loading="lazy">
+                            <img src="./assets/germany.png" alt="german flag" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="albums">
+                        <div class="sound-container">
+                            <p>Some albums I like:</p>
+                            <div class="song-info">
+                                <span class="material-symbols-outlined" id="audio-control">
+                                    volume_off
+                                </span>
+                                <div id="track-title"></div>
+                            </div>
 
-        <div class="division-four">
-            <div class="division-four-one"></div>
-            <div class="division-four-two"></div>
-            <div class="division-four-three"></div>
-            <div class="division-four-four"></div>
-            <div class="division-four-five"></div>
-        </div>
+                        </div>
 
-        <h1 class="chess inactive">I was a semi-professional chess player.</h1>
-        <p class="about-chess inactive">I started playing when I was 12 years old when got relly into the game. I
-            continued playing with my own coach and got pretty far, I even managed to get a master title (National
-            Master!). When I got to high-school I stopped competing because I was a bit burned out. Nowadays I still
-            play but more casually. Here's my <a href="https://www.chess.com/member/emersonlima">Chess.com profile.</a>
-        </p>
-        <img src="./assets/chess_pieces/bq.png" alt="black queen" class="black-queen">
-        <img src="./assets/chess_pieces/bn.png" alt="black night" class="black-knight">
-        <img src="./assets/chess_pieces/wk.png" alt="white king" class="white-king">
-        <img src="./assets/chess_pieces/wp.png" alt="white pawn" class="white-pawn">
-        <img src="./assets/chess_pieces/wb.png" alt="white bishop" class="white-bishop">
-        <img src="./assets/chess_pieces/br.png" alt="black rook" class="black-rook">
+                        <div id="albums-carrousel">
+                            <span class="material-symbols-outlined" id="prev">
+                                arrow_back_ios_new
+                            </span>
+                            <span class="material-symbols-outlined" id="next">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-        <h1 class="reading inactive">I love reading.</h1>
-        <div class="div-reading div-reading-inactive">
-            <p class="about-reading inactive">I started off reading juvenile fiction. The first series that I became a
-                fan of was "Diary of a Wimpy Kid". I have all the books and have read them several times. Then I had a
-                Greek Mithology phase and obviously I read the Percy Jackson books and some others in the same theme
-                from diferent authors. Nowadays, I still read fiction, but I also try reading some of the classics from
-                Brazilian literature (as well as other contries) and more academic works from my area of study.</p>
-        </div>
-
-        <h1 class="finally inactive">And finally...</h1>
-
-        <h1 class="coding inactive">I like coding!</h1>
-        <p class="about-coding inactive">I started learning about web-development when I was in high-school. I went to a
-            school that taught us about it and found it pretty cool. I ended up moving to a different school for my last
-            year of school but I still wanted to learn about it so I decided to study it by myself. And here am I haha.
-            Right now, I am focusing on web development and I'm hoping to get a job on the area, but in the future I
-            want to learn some other languages such as Java, C# and C++. I have done several projects, but the one I'm
-            most proud of is my <a href="https://github.com/poissonfou/Carousel_Albums">Albums Carousel</a>, since it is
-            my own design, and I think I did a pretty good job :).
-        </p>
-
-        <img src="./assets/carousel.png" alt="project image" class="project-image inactive">
+        <section class="section-four">
+            <p>Some projects I've done:</p>
+            <div class="projects-cards">
+                <img src="./assets/chess.png" alt="project image" class="card">
+                <img src="./assets/rocketshoes.png" alt="project image" class="card">
+                <img src="./assets/school.png" alt="project image" class="card">
+                <img src="./assets/carrousel.png" alt="project image" class="card">
+            </div>
+            <div class="info-box">
+                <img src="" id="selected-project-img" data-github-url="">
+                <p id="project-desc"></p>
+            </div>
+        </section>
     </main>
-    <footer>
-        <p>@Emerson Lima 2023 </p>
-        <img src="./assets/linkedin.png" alt="linkedin icon" class="linkedin">
-        <a href="https://www.linkedin.com/in/emerson-lima-000986237/">Linkedin</a>
-        <img src="./assets/instagram.png" alt="instagram icon" class="instagram">
-        <a href="https://www.instagram.com/__emergomes/">Instagram</a>
-    </footer>
 </body>
 
 </html>
