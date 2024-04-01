@@ -160,7 +160,7 @@
   padding: 0;
   animation-duration: 15s;
   animation-iteration-count: infinite;
-  animation-timing-function: cubic-bezier(0.4, 0.24, 0.29, 0.9);
+  animation-timing-function: cubic-bezier(0.53, 0.52, 0.72, 0.72);
 }
 
 @keyframes slide_text {
@@ -169,7 +169,7 @@
   }
 
   10% {
-    margin-left: -45px;
+    margin-left: -2em;
   }
 
   40% {

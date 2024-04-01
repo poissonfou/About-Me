@@ -6,6 +6,8 @@ let nextTrackTimeout;
 let trackInterval;
 
 let titleDisplay = document.getElementById("track-title-display");
+let audioControler = document.getElementById("audio-control");
+let titleDiv = document.getElementById("track-title");
 
 function audioControlClick(e) {
   if (song == null) return;
@@ -21,9 +23,6 @@ function audioControlClick(e) {
 export const App = (function (UIController) {
   const _loadAlbums = async () => {
     let counter = 0;
-    let audioControler = document.getElementById("audio-control");
-    let titleDiv = document.getElementById("track-title");
-    let titleDisplay = document.getElementById("track-title-display");
 
     albums = await UIController.displayAlbums();
 
@@ -40,6 +39,7 @@ export const App = (function (UIController) {
     window.addEventListener("mousedown", () => {
       if (song.duration > 0 && song.paused) {
         song.play();
+        song.volume = 0;
       }
     });
 
@@ -85,8 +85,6 @@ export const App = (function (UIController) {
     let counter = 0;
     let nextAlbum = document.getElementById(`${id}`);
     let prevAlbum = document.getElementById(`${prevId}`);
-    let audioControler = document.getElementById("audio-control");
-    let titleDiv = document.getElementById("track-title");
 
     prevAlbum.classList = "album-item hidden";
     nextAlbum.classList = "album-item selected";
