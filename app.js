@@ -140,6 +140,7 @@ let projectsDesc = [
   "A homepage for a footwear store. Created using React.js.",
   "A concept for a private school website. Contains info about the school and also a student board page (which you need to login to access). Created with Vue.js 3, Vuex and Vue Router.",
   "A website where you can search for albums/artists and save them. You can browse through your albums and listen to previews (if available). Created with the Spotify API.",
+  "Aplication where the user can track places where the went running/cicling, created during the JavaScript course offered by Jonas Schmedtmann on Udemy. User can enter infomations such as duration of the exercise, as well as travelled kilometers and velocity.",
 ];
 
 let projectsUrl = [
@@ -147,11 +148,14 @@ let projectsUrl = [
   "https://github.com/poissonfou/RocketShoes",
   "https://github.com/poissonfou/School-Site-Concept",
   "https://github.com/poissonfou/Save-Albums",
+  "https://github.com/poissonfou/Mapty_App",
 ];
 
 for (let i = 0; i < imgs.length; i++) {
   imgs[i].addEventListener("click", (e) => {
     let mainImg = document.getElementById("selected-project-img");
+    let mainImgDiv = document.getElementById("selected-project-div");
+    let clickMe = document.getElementById("call-click");
     let p = document.getElementById("project-desc");
     let prevSelected = document.getElementsByClassName("selected-project")[0];
     if (prevSelected) prevSelected.classList = "";
@@ -160,13 +164,21 @@ for (let i = 0; i < imgs.length; i++) {
       mainImg.setAttribute("src", "");
       mainImg.setAttribute("data-github-url", "");
       mainImg.style.height = "0em";
-      mainImg.style.border = "none";
+      mainImgDiv.style.height = "0em";
+      mainImgDiv.style.border = "none";
       p.innerText = "";
+      clickMe.classList.add("hidden");
       return;
     }
 
-    mainImg.style.height = "28em";
-    mainImg.style.border = "#0a1f35 2px solid";
+    mainImgDiv.style.height = "30em";
+    mainImg.style.height = "30em";
+    if (window.innerWidth < 750) {
+      mainImgDiv.style.height = "15em";
+      mainImg.style.height = "15em";
+    }
+    clickMe.classList.remove("hidden");
+    mainImgDiv.style.border = "#0a1f35 2px solid";
     mainImg.setAttribute("src", imgs[i].currentSrc);
     mainImg.setAttribute("data-github-url", projectsUrl[i]);
     p.innerText = projectsDesc[i];
@@ -181,3 +193,16 @@ document
       window.location.href = e.target.attributes[2].nodeValue;
     }
   });
+
+window.addEventListener("resize", () => {
+  let mainImgDiv = document.getElementById("selected-project-div");
+  let mainImg = document.getElementById("selected-project-img");
+  if (mainImg.getAttribute("src") !== "") {
+    mainImgDiv.style.height = "30em";
+    mainImg.style.height = "30em";
+    if (window.innerWidth < 750) {
+      mainImgDiv.style.height = "15em";
+      mainImg.style.height = "15em";
+    }
+  }
+});

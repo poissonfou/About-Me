@@ -1,0 +1,73 @@
+.section-two {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0em 8em;
+  padding-bottom: 3em;
+  text-align: center;
+}
+
+.section-two p {
+  padding: 1em;
+  padding-bottom: 0;
+  font-size: 2rem;
+  color: white;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.exp {
+  text-align: center;
+}
+
+.exp p {
+  font-size: 1.8rem;
+  margin-top: 0;
+  font-family: "Roboto";
+}
+
+.techs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.techs-prac img {
+  margin-left: 1em;
+}
+
+.techs-prac img:first-child {
+  margin-left: 0;
+}
+
+.techs img {
+  width: 5em;
+  height: 5em;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+@media (max-width: 900px) {
+  .section-two p {
+    width: 15em;
+  }
+
+  .exp p {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-two p {
+    font-size: 1.8rem;
+    width: 13em;
+  }
+
+  .exp p {
+    font-size: 1.4rem;
+    width: auto;
+  }
+
+  .techs img {
+    width: 3em;
+    height: 3em;
+  }
+}

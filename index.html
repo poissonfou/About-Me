@@ -17,6 +17,10 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/section_one.css">
+    <link rel="stylesheet" href="./styles/section_two.css">
+    <link rel="stylesheet" href="./styles/section_three.css">
+    <link rel="stylesheet" href="./styles/section_four.css">
     <script type="module" src="./app.js"></script>
     <title>About Me</title>
 </head>
@@ -83,7 +87,7 @@
                     <img src="./assets/css.png" alt="">
                 </div>
                 <p>And I have some practice with:</p>
-                <div class="techs">
+                <div class="techs techs-prac">
                     <img src="./assets/node.png" alt="">
                     <img src="./assets/mysql.png" alt="">
                     <img src="./assets/mongo.png" alt="">
@@ -95,7 +99,7 @@
         </section>
 
         <section class="section-three">
-            <p class="type">Some info about me :)</p>
+            <p class="title">Some info about me :)</p>
             <div class="info-container">
                 <div class="likes">
                     <p>I'm really into:</p>
@@ -170,9 +174,13 @@
                 <img src="./assets/rocketshoes.png" alt="project image" class="card">
                 <img src="./assets/school.png" alt="project image" class="card">
                 <img src="./assets/carrousel.png" alt="project image" class="card">
+                <img src="./assets/mapty.png" alt="project image" class="card">
             </div>
             <div class="info-box">
-                <img src="" id="selected-project-img" data-github-url="">
+                <div id="selected-project-div">
+                    <img src="" id="selected-project-img" data-github-url="">
+                </div>
+                <p class="hidden" id="call-click">click me!</p>
                 <p id="project-desc"></p>
             </div>
         </section>

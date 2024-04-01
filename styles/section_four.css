@@ -1,0 +1,156 @@
+.section-four {
+  padding: 1em;
+  margin: 2em 5em;
+  background-color: rgba(3, 13, 36, 0.5);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.section-four p {
+  color: white;
+  font-size: 2rem;
+  font-family: "Fjalla One", sans-serif;
+}
+
+.projects-cards {
+  display: flex;
+  margin-left: 40em;
+}
+
+.projects-cards img {
+  width: 20em;
+  height: 15em;
+  object-fit: cover;
+  border: #0a1f35 2px solid;
+  border-radius: 3px;
+  transition-property: margin-top;
+  transition-duration: 1s;
+}
+
+.projects-cards img:nth-child(2) {
+  transform: translateX(-10em);
+}
+
+.projects-cards img:nth-child(3) {
+  transform: translateX(-20em);
+}
+
+.projects-cards img:nth-child(4) {
+  transform: translateX(-30em);
+}
+
+.projects-cards img:nth-child(5) {
+  transform: translateX(-40em);
+}
+
+.projects-cards img:hover {
+  margin-top: -2em;
+  transform: 1s;
+}
+
+.selected-project {
+  margin-top: -2em;
+}
+
+.info-box {
+  width: 100%;
+  margin-top: 3em;
+}
+
+.info-box #call-click {
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 1rem;
+  animation-duration: 5s;
+  animation-name: jump;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+@keyframes jump {
+  0% {
+    transform: skewY(-5deg);
+  }
+
+  5% {
+    transform: skewY(5deg);
+  }
+
+  50% {
+    transform: skewY(0deg);
+  }
+
+  100% {
+    transform: skewY(0deg);
+  }
+}
+
+.hidden {
+  display: hidden;
+}
+
+#selected-project-div {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+#selected-project-img {
+  width: 100%;
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+#selected-project-img:hover,
+.card:hover {
+  cursor: pointer;
+}
+
+#selected-project-img:hover {
+  transition: 1s;
+  transform: scale(1);
+}
+
+#project-desc {
+  font-family: "Roboto";
+}
+
+@media (max-width: 1200px) {
+  .projects-cards img {
+    width: 18em;
+    height: 12em;
+  }
+}
+
+@media (max-width: 1000px) {
+  .projects-cards img {
+    width: 15em;
+    height: 12em;
+  }
+
+  #project-desc {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .section-four {
+    margin: 02em 0em;
+  }
+
+  .section-four p {
+    font-size: 1.8rem;
+  }
+
+  .projects-cards img {
+    width: 13em;
+    height: 12em;
+  }
+
+  #selected-project-img {
+    object-fit: cover;
+  }
+}
