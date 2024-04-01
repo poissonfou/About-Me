@@ -75,11 +75,11 @@
     transform: skewY(-5deg);
   }
 
-  5% {
+  1% {
     transform: skewY(5deg);
   }
 
-  50% {
+  3% {
     transform: skewY(0deg);
   }
 

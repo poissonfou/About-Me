@@ -11,7 +11,7 @@ export const UIController = (function (APIController) {
         <div class="album-item ${i !== 0 ? "hidden" : "selected"}" id="${i}">
             <img src="${albums[i].images[1].url}" alt="${
         albums[i].name
-      }" title="${albums[i].name}" loading="lazy">
+      }" title="${albums[i].name}" >
             <p>${
               albums[i].name == "<COPINGMECHANISM>"
                 ? albums[i].name.slice(1, 16)

@@ -5,6 +5,8 @@ let song;
 let nextTrackTimeout;
 let trackInterval;
 
+let titleDisplay = document.getElementById("track-title-display");
+
 function audioControlClick(e) {
   if (song == null) return;
   if (e.target.innerText == "volume_off") {
@@ -21,12 +23,15 @@ export const App = (function (UIController) {
     let counter = 0;
     let audioControler = document.getElementById("audio-control");
     let titleDiv = document.getElementById("track-title");
+    let titleDisplay = document.getElementById("track-title-display");
+
     albums = await UIController.displayAlbums();
 
     if (albums[0].tracks.items[counter].preview_url == null) {
       song = null;
       audioControler.innerText = "volume_off";
-      titleDiv.innerText = "";
+      titleDisplay.innerText = "";
+      titleDisplay.style.animationName = "";
       titleDiv.setAttribute("title", "");
       return;
     }
@@ -34,29 +39,41 @@ export const App = (function (UIController) {
     song = new Audio(albums[0].tracks.items[counter].preview_url);
     song.play();
     song.volume = 0;
-    titleDiv.innerText = albums[0].tracks.items[counter].name;
+    titleDisplay.innerText = albums[0].tracks.items[counter].name;
+    if (titleDisplay.innerText.length > 15) {
+      titleDisplay.style.animationName = "slide_text";
+    }
     titleDiv.setAttribute("title", albums[0].tracks.items[counter].name);
 
     trackInterval = setInterval(() => {
       counter++;
-      if (counter > albums[0].tracks.items.length) counter = 0;
+      if (counter == albums[0].tracks.items.length) counter = 0;
+      song.pause();
       song = new Audio(albums[0].tracks.items[counter].preview_url);
-      titleDiv.innerText = albums[0].tracks.items[counter].name;
-      titleDiv.setAttribute("title", albums[0].tracks.items[counter].name);
+      titleDisplay.innerText = "Next track...";
+      titleDiv.setAttribute("title", "Next track...");
+      titleDisplay.style.animationName = "";
       nextTrackTimeout = setTimeout(() => {
+        titleDisplay.innerText = albums[0].tracks.items[counter].name;
+        titleDiv.setAttribute("title", albums[0].tracks.items[counter].name);
+        if (titleDisplay.innerText.length > 15) {
+          titleDisplay.style.animationName = "slide_text";
+        }
+
         song.play();
-      }, 3000);
+      }, 4000);
       if (audioControler.innerText == "volume_off") {
         song.volume = 0;
       } else {
         song.volume = 1;
       }
-    }, 30000);
+    }, 31000);
 
     audioControler.addEventListener("click", audioControlClick);
   };
 
   const _moveCarrousel = (id, prevId) => {
+    titleDisplay.style.animationName = "";
     if (song) song.pause();
     clearInterval(trackInterval);
     clearTimeout(nextTrackTimeout);
@@ -74,15 +91,19 @@ export const App = (function (UIController) {
     if (album.tracks.items[counter].preview_url == null) {
       song = null;
       audioControler.innerText = "volume_off";
-      titleDiv.innerText = "";
-      titleDiv.setAttribute("title", "");
+      titleDisplay.innerText = "Not available.";
+      titleDiv.setAttribute("title", "Not available.");
+      titleDisplay.style.animationName = "";
       return;
     }
 
     song = new Audio(album.tracks.items[counter].preview_url);
     song.play();
-    titleDiv.innerText = album.tracks.items[counter].name;
+    titleDisplay.innerText = album.tracks.items[counter].name;
     titleDiv.setAttribute("title", album.tracks.items[counter].name);
+    if (titleDisplay.innerText.length > 15) {
+      titleDisplay.style.animationName = "slide_text";
+    }
 
     if (audioControler.innerText == "volume_off") {
       song.volume = 0;
@@ -92,19 +113,26 @@ export const App = (function (UIController) {
 
     trackInterval = setInterval(() => {
       counter++;
-      if (counter > album.tracks.items.length) counter = 0;
+      if (counter == album.tracks.items.length) counter = 0;
+      song.pause();
       song = new Audio(album.tracks.items[counter].preview_url);
-      titleDiv.innerText = album.tracks.items[counter].name;
-      titleDiv.setAttribute("title", album.tracks.items[counter].name);
+      titleDisplay.innerText = "Next track...";
+      titleDiv.setAttribute("title", "Next track...");
+      titleDisplay.style.animationName = "";
       nextTrackTimeout = setTimeout(() => {
+        titleDisplay.innerText = album.tracks.items[counter].name;
+        titleDiv.setAttribute("title", album.tracks.items[counter].name);
+        if (titleDisplay.innerText.length > 15) {
+          titleDisplay.style.animationName = "slide_text";
+        }
         song.play();
-      }, 3000);
+      }, 4000);
       if (audioControler.innerText == "volume_off") {
         song.volume = 0;
       } else {
         song.volume = 1;
       }
-    }, 30000);
+    }, 31000);
   };
 
   return {
@@ -205,4 +233,55 @@ window.addEventListener("resize", () => {
       mainImg.style.height = "15em";
     }
   }
+
+  let html = `
+  <div class="skills">
+  <div>Detail Oriented</div>
+  <div>Dedicated</div>
+  <div>Frontend</div>
+  <div>Backend</div>
+  <div>Cooperative</div>
+  <div>Sympathetic</div>
+  <div>Great Coffee☕</div> 
+  </div>
+  `;
+  if (window.innerWidth <= 900) {
+    let sectionOne = document.getElementsByClassName("section-one")[0];
+    if (sectionOne.children.length == 2) {
+      let skills = document.getElementsByClassName("skills")[0];
+      skills.remove();
+      sectionOne.insertAdjacentHTML("afterbegin", html);
+    }
+  } else {
+    let textBox = document.getElementsByClassName("text-box")[0];
+    if (textBox.children.length == 2) {
+      let skills = document.getElementsByClassName("skills")[0];
+      skills.remove();
+      textBox.insertAdjacentHTML("beforeend", html);
+    }
+  }
 });
+
+let html = `
+  <div class="skills">
+  <div>Detail Oriented</div>
+  <div>Dedicated</div>
+  <div>Frontend</div>
+  <div>Backend</div>
+  <div>Cooperative</div>
+  <div>Sympathetic</div>
+  <div>Great Coffee☕</div> 
+  </div>
+  `;
+
+if (window.innerWidth <= 900) {
+  let sectionOne = document.getElementsByClassName("section-one")[0];
+  if (sectionOne.children.length == 2) {
+    sectionOne.insertAdjacentHTML("afterbegin", html);
+  }
+} else {
+  let textBox = document.getElementsByClassName("text-box")[0];
+  if (textBox.children.length == 2) {
+    textBox.insertAdjacentHTML("beforeend", html);
+  }
+}

@@ -149,9 +149,35 @@
   border-radius: 5px;
   padding: 0.2em;
   width: 7em;
-  text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+#track-title-display {
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.4, 0.24, 0.29, 0.9);
+}
+
+@keyframes slide_text {
+  0% {
+    margin-left: 0px;
+  }
+
+  10% {
+    margin-left: -45px;
+  }
+
+  40% {
+    margin: 0;
+  }
+
+  100% {
+    margin: 0;
+  }
 }
 
 #albums-carrousel {
@@ -238,6 +264,23 @@
   font-size: 0.8em;
 }
 
+.credit {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.credit p {
+  font-size: 0.8rem;
+  margin: 0;
+  margin-right: 0.3em;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.credit i {
+  color: #1ed760;
+}
+
 @media (max-width: 1150px) {
   .likes p {
     font-size: 1.3rem;
@@ -313,6 +356,10 @@
 
   #track-title {
     font-size: 1rem;
+  }
+
+  .credit p {
+    font-size: 0.8rem;
   }
 }
 
@@ -398,6 +445,10 @@
 
   #track-title {
     font-size: 1.2rem;
+  }
+
+  .credit p {
+    font-size: 0.8rem;
   }
 }
 
@@ -486,5 +537,9 @@
 
   #track-title {
     font-size: 1rem;
+  }
+
+  .credit p {
+    font-size: 0.8rem;
   }
 }

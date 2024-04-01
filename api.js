@@ -36,25 +36,6 @@ export const APIController = (function () {
     }
   };
 
-  const _getAlbumTracks = async (id, token) => {
-    try {
-      const result = await fetch(
-        `https://api.spotify.com/v1/albums/${id}/tracks`,
-        {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      const data = await result.json();
-      return data.items;
-    } catch (error) {
-      console.log(error);
-      alert("An error has occurred on track fetching. Try again.");
-    }
-  };
-
   const _returnAlbumInfo = async () => {
     let token = await APIController.getToken();
 
@@ -87,9 +68,6 @@ export const APIController = (function () {
     },
     getAlbum(id, token) {
       return _getAlbum(id, token);
-    },
-    getAlbumTracks() {
-      return _getAlbumTracks();
     },
     returnAlbumInfo() {
       return _returnAlbumInfo();
