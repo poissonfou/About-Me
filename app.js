@@ -37,8 +37,12 @@ export const App = (function (UIController) {
     }
 
     song = new Audio(albums[0].tracks.items[counter].preview_url);
-    song.play();
-    song.volume = 0;
+    window.addEventListener("mousedown", () => {
+      if (song.duration > 0 && song.paused) {
+        song.play();
+      }
+    });
+
     titleDisplay.innerText = albums[0].tracks.items[counter].name;
     if (titleDisplay.innerText.length > 15) {
       titleDisplay.style.animationName = "slide_text";

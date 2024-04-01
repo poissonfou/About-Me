@@ -96,12 +96,13 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  transition: height 0.5s;
 }
 
 #selected-project-img {
   width: 100%;
   transform: scale(1.2);
-  transition: 1s;
+  transition: height 0.5s;
 }
 
 #selected-project-img:hover,
