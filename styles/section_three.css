@@ -32,6 +32,7 @@
   );
   border-radius: 4px;
   text-align: left;
+  padding: 3em 0em;
 }
 
 .likes p {
@@ -282,6 +283,10 @@
 }
 
 @media (max-width: 1150px) {
+  .likes {
+    padding: 3.5em 0em;
+  }
+
   .likes p {
     font-size: 1.3rem;
     padding-left: 0.8em;
@@ -364,6 +369,10 @@
 }
 
 @media (max-width: 1000px) {
+  .likes {
+    padding: 0em;
+  }
+
   .info-container {
     flex-direction: column;
   }
