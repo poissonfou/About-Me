@@ -17,7 +17,7 @@
 
 .projects-cards {
   display: flex;
-  margin-left: 40em;
+  margin-left: 50em;
 }
 
 .projects-cards img {
@@ -44,6 +44,10 @@
 
 .projects-cards img:nth-child(5) {
   transform: translateX(-40em);
+}
+
+.projects-cards img:nth-child(6) {
+  transform: translateX(-50em);
 }
 
 .projects-cards img:hover {
@@ -101,8 +105,12 @@
 
 #selected-project-img {
   width: 100%;
-  transform: scale(1.2);
   transition: height 0.5s;
+}
+
+#selected-project-img {
+  transform: scale(1.2);
+  transition: transform 1s;
 }
 
 #selected-project-img:hover,

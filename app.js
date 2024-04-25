@@ -163,26 +163,29 @@ document.getElementById("prev").addEventListener("click", () => {
   App.moveCarrousel(+selectedAlbum - 1, selectedAlbum);
 });
 
-let imgs = document.querySelectorAll(".card");
+//changes selected project
+const PROJECTS = document.querySelectorAll(".card");
 
-let projectsDesc = [
+const PROJECTS_DESC = [
   "This is a simple page to play chess locally. You can choose different times, skip through moves and games stay available after they are finished. Created with React and Redux.",
   "A homepage for a footwear store. Created using React.js.",
   "A concept for a private school website. Contains info about the school and also a student board page (which you need to login to access). Created with Vue.js 3, Vuex and Vue Router.",
   "A website where you can search for albums/artists and save them. You can browse through your albums and listen to previews (if available). Created with the Spotify API.",
-  "Aplication where the user can track places where the went running/cicling, created during the JavaScript course offered by Jonas Schmedtmann on Udemy. User can enter infomations such as duration of the exercise, as well as travelled kilometers and velocity.",
+  "Application where the user can track places where the went running/cicling, created during the JavaScript course offered by Jonas Schmedtmann on Udemy. User can enter infomations such as duration of the exercise, as well as travelled kilometers and velocity.",
+  "Website to browse and download high resolution paintings. The user can create an account to save and create 'collections' of paintings, accessible on their profile page. Composed of a backend REST API created with Node.js + Express and Mongoose, and a frontend composed of React, React Router and Redux.",
 ];
 
-let projectsUrl = [
+const PROJECTS_URL = [
   "https://github.com/poissonfou/Chess",
   "https://github.com/poissonfou/RocketShoes",
   "https://github.com/poissonfou/School-Site-Concept",
   "https://github.com/poissonfou/Save-Albums",
   "https://github.com/poissonfou/Mapty_App",
+  "https://github.com/poissonfou/Art",
 ];
 
-for (let i = 0; i < imgs.length; i++) {
-  imgs[i].addEventListener("click", (e) => {
+for (let i = 0; i < PROJECTS.length; i++) {
+  PROJECTS[i].addEventListener("click", (e) => {
     let mainImg = document.getElementById("selected-project-img");
     let mainImgDiv = document.getElementById("selected-project-div");
     let clickMe = document.getElementById("call-click");
@@ -190,7 +193,7 @@ for (let i = 0; i < imgs.length; i++) {
     let prevSelected = document.getElementsByClassName("selected-project")[0];
     if (prevSelected) prevSelected.classList = "";
 
-    if (p.innerText == projectsDesc[i]) {
+    if (p.innerText == PROJECTS_DESC[i]) {
       mainImg.setAttribute("src", "");
       mainImg.setAttribute("data-github-url", "");
       mainImg.style.height = "0em";
@@ -209,13 +212,14 @@ for (let i = 0; i < imgs.length; i++) {
     }
     clickMe.classList.remove("hidden");
     mainImgDiv.style.border = "#0a1f35 2px solid";
-    mainImg.setAttribute("src", imgs[i].currentSrc);
-    mainImg.setAttribute("data-github-url", projectsUrl[i]);
-    p.innerText = projectsDesc[i];
+    mainImg.setAttribute("src", PROJECTS[i].currentSrc);
+    mainImg.setAttribute("data-github-url", PROJECTS_URL[i]);
+    p.innerText = PROJECTS_DESC[i];
     e.target.classList = "card selected-project";
   });
 }
 
+//redirects to project github on second click
 document
   .getElementById("selected-project-img")
   .addEventListener("click", (e) => {
@@ -223,6 +227,20 @@ document
       window.location.href = e.target.attributes[2].nodeValue;
     }
   });
+
+//set 'skills' div position when page is rezised
+
+const SKILLS = `
+  <div class="skills">
+  <div>Detail Oriented</div>
+  <div>Dedicated</div>
+  <div>Frontend</div>
+  <div>Backend</div>
+  <div>Cooperative</div>
+  <div>Sympathetic</div>
+  <div>Great Coffee☕</div> 
+  </div>
+  `;
 
 window.addEventListener("resize", () => {
   let mainImgDiv = document.getElementById("selected-project-div");
@@ -236,54 +254,32 @@ window.addEventListener("resize", () => {
     }
   }
 
-  let html = `
-  <div class="skills">
-  <div>Detail Oriented</div>
-  <div>Dedicated</div>
-  <div>Frontend</div>
-  <div>Backend</div>
-  <div>Cooperative</div>
-  <div>Sympathetic</div>
-  <div>Great Coffee☕</div> 
-  </div>
-  `;
   if (window.innerWidth <= 900) {
     let sectionOne = document.getElementsByClassName("section-one")[0];
     if (sectionOne.children.length == 2) {
       let skills = document.getElementsByClassName("skills")[0];
       skills.remove();
-      sectionOne.insertAdjacentHTML("afterbegin", html);
+      sectionOne.insertAdjacentHTML("afterbegin", SKILLS);
     }
   } else {
     let textBox = document.getElementsByClassName("text-box")[0];
     if (textBox.children.length == 2) {
       let skills = document.getElementsByClassName("skills")[0];
       skills.remove();
-      textBox.insertAdjacentHTML("beforeend", html);
+      textBox.insertAdjacentHTML("beforeend", SKILLS);
     }
   }
 });
 
-let html = `
-  <div class="skills">
-  <div>Detail Oriented</div>
-  <div>Dedicated</div>
-  <div>Frontend</div>
-  <div>Backend</div>
-  <div>Cooperative</div>
-  <div>Sympathetic</div>
-  <div>Great Coffee☕</div> 
-  </div>
-  `;
-
+//set 'skills' div position when page is loaded
 if (window.innerWidth <= 900) {
   let sectionOne = document.getElementsByClassName("section-one")[0];
   if (sectionOne.children.length == 2) {
-    sectionOne.insertAdjacentHTML("afterbegin", html);
+    sectionOne.insertAdjacentHTML("afterbegin", SKILLS);
   }
 } else {
   let textBox = document.getElementsByClassName("text-box")[0];
   if (textBox.children.length == 2) {
-    textBox.insertAdjacentHTML("beforeend", html);
+    textBox.insertAdjacentHTML("beforeend", SKILLS);
   }
 }
