@@ -478,7 +478,7 @@
   }
 
   .grid-likes {
-    grid-template-columns: 11.6em 11.6em;
+    grid-template-columns: 11.5em 11.5em;
   }
 
   .grid-likes div {
@@ -550,5 +550,70 @@
 
   .credit p {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .grid-likes {
+    grid-template-columns: 8.5em 8.5em;
+  }
+
+  .languages div img {
+    width: 3em;
+    height: 3em;
+  }
+
+  .sound-container {
+    flex-direction: column;
+  }
+
+  .albums p {
+    font-size: 1.3rem;
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  #track-title-display {
+    font-size: 1rem;
+  }
+
+  .sound-container span {
+    font-size: 2rem;
+  }
+
+  .song-info {
+    margin: 0.2em 0em;
+  }
+
+  .credit p {
+    font-size: 0.8rem;
+  }
+
+  #prev {
+    left: 0.5em;
+  }
+
+  #next {
+    right: 0.5em;
+  }
+
+  @keyframes jump_next {
+    0% {
+      right: 0.5em;
+    }
+
+    100% {
+      right: 0.2em;
+    }
+  }
+
+  @keyframes jump_prev {
+    0% {
+      left: 0.5em;
+    }
+
+    100% {
+      left: 0.2em;
+    }
   }
 }

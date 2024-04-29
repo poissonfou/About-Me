@@ -120,7 +120,6 @@
 }
 
 .contact {
-  top: 80%;
   background-color: rgba(3, 13, 36, 0.5);
   border-radius: 2px;
   padding: 0.5em;
@@ -195,6 +194,10 @@
     gap: 0em;
   }
 
+  .section-one .text-box {
+    padding: 1em 2em;
+  }
+
   .img-box img {
     width: 20em;
     height: 23em;
@@ -207,5 +210,20 @@
 
   .skills div {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .section-one .text-box h1 {
+    font-size: 3.5rem;
+  }
+
+  .external-links i {
+    font-size: 1.7rem;
+  }
+
+  .img-box img {
+    width: 100%;
+    height: 15em;
   }
 }

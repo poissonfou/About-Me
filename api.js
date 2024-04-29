@@ -58,7 +58,6 @@ export const APIController = (function () {
     };
 
     await getAlbumsInfo();
-    console.log(albums);
     return albums;
   };
 

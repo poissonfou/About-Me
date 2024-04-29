@@ -15,6 +15,11 @@
   font-family: "Fjalla One", sans-serif;
 }
 
+.section-two p:first-child {
+  padding-top: 0;
+  margin-top: 0em;
+}
+
 .exp {
   text-align: center;
 }

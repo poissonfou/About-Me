@@ -186,6 +186,7 @@ const PROJECTS_URL = [
 
 for (let i = 0; i < PROJECTS.length; i++) {
   PROJECTS[i].addEventListener("click", (e) => {
+    if (window.innerWidth <= 750) return;
     let mainImg = document.getElementById("selected-project-img");
     let mainImgDiv = document.getElementById("selected-project-div");
     let clickMe = document.getElementById("call-click");
@@ -219,14 +220,148 @@ for (let i = 0; i < PROJECTS.length; i++) {
   });
 }
 
-//redirects to project github on second click
-document
-  .getElementById("selected-project-img")
-  .addEventListener("click", (e) => {
+//sets project description on load and resize
+
+const PROJECT_DESC = document.getElementById("project-desc");
+
+if (window.innerWidth <= 750) {
+  const currentProject = document.getElementById("0_project");
+  currentProject.classList = "card displayed";
+  PROJECT_DESC.innerText = PROJECTS_DESC[0];
+  currentProject.setAttribute("data-github-url", PROJECTS_URL[0]);
+
+  const cards = document.getElementsByClassName("card");
+
+  for (let i = 1; i < cards.length; i++) {
+    cards[i].classList = "card hidden";
+  }
+}
+
+window.addEventListener("resize", () => {
+  const displayedProject = document.getElementsByClassName("displayed")[0];
+  const selectedProject =
+    document.getElementsByClassName("selected-project")[0];
+
+  if (window.innerWidth <= 750 && !selectedProject && !displayedProject) {
+    const cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList = "card hidden";
+    }
+
+    const firstProject = document.getElementById("0_project");
+    firstProject.classList = "card displayed";
+    firstProject.setAttribute("data-github-url", PROJECTS_URL[0]);
+    PROJECT_DESC.innerText = PROJECTS_DESC[0];
+  }
+
+  if (window.innerWidth <= 750 && selectedProject) {
+    const cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList = "card hidden";
+    }
+
+    const mainImg = document.getElementById("selected-project-img");
+    const mainImgDiv = document.getElementById("selected-project-div");
+    const clickMe = document.getElementById("call-click");
+
+    mainImgDiv.style.height = "0em";
+    mainImgDiv.style.border = "none";
+    mainImg.style.height = "0em";
+    clickMe.classList.add("hidden");
+
+    mainImg.setAttribute("src", "");
+    mainImg.setAttribute("data-github-url", "");
+
+    const currentProjectId = selectedProject.id[0];
+    selectedProject.classList = "card displayed";
+    selectedProject.setAttribute(
+      "data-github-url",
+      PROJECTS_URL[currentProjectId]
+    );
+    PROJECT_DESC.innerText = PROJECTS_DESC[currentProjectId];
+  }
+
+  if (displayedProject && window.innerWidth > 750) {
+    const cards = document.getElementsByClassName("card");
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].classList = "card";
+    }
+
+    displayedProject.classList = "card selected-project";
+    displayedProject.removeAttribute("data-github-url");
+    const idx = displayedProject.id[0];
+    const mainImg = document.getElementById("selected-project-img");
+    const mainImgDiv = document.getElementById("selected-project-div");
+    const clickMe = document.getElementById("call-click");
+
+    mainImgDiv.style.height = "30em";
+    mainImgDiv.style.border = "#0a1f35 2px solid";
+    mainImg.style.height = "30em";
+
+    clickMe.classList.remove("hidden");
+
+    mainImg.setAttribute("src", PROJECTS[idx].currentSrc);
+    mainImg.setAttribute("data-github-url", PROJECTS_URL[idx]);
+  }
+});
+
+//redirects to project github
+
+const selectedProject = document.getElementById("selected-project-img");
+
+if (selectedProject) {
+  selectedProject.addEventListener("click", (e) => {
     if (e.target.attributes[2].nodeValue !== "") {
       window.location.href = e.target.attributes[2].nodeValue;
     }
   });
+}
+
+const displayedProject = document.getElementsByClassName("displayed")[0];
+
+if (displayedProject) {
+  displayedProject.addEventListener("click", (e) => {
+    window.location.href = e.target.attributes[5].nodeValue;
+  });
+}
+
+//events for buttons on projects page
+
+const next_projects = document.getElementById("next_projects");
+const prev_projects = document.getElementById("prev_projects");
+
+const moveForwards = () => {
+  const currentProject = document.getElementsByClassName("displayed")[0];
+
+  let id = Number(currentProject.id[0]);
+
+  if (id == 5) return;
+
+  id++;
+  currentProject.classList = "card hidden";
+  const nextProject = document.getElementById(`${id}_project`);
+  nextProject.classList = "card displayed";
+
+  PROJECT_DESC.innerText = PROJECTS_DESC[id];
+};
+
+const moveBackwards = () => {
+  const currentProject = document.getElementsByClassName("displayed")[0];
+
+  let id = Number(currentProject.id[0]);
+
+  if (id == 0) return;
+
+  id--;
+  currentProject.classList = "card hidden";
+  const nextProject = document.getElementById(`${id}_project`);
+  nextProject.classList = "card displayed";
+
+  PROJECT_DESC.innerText = PROJECTS_DESC[id];
+};
+
+next_projects.addEventListener("click", moveForwards);
+prev_projects.addEventListener("click", moveBackwards);
 
 //set 'skills' div position when page is rezised
 
